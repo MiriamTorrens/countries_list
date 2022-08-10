@@ -1,6 +1,6 @@
 import { readFileSync, writeFileSync } from 'fs';
 
-const countries = readFileSync("countries.txt", {
+const countries = readFileSync("files/countries.txt", {
     encoding: 'utf8',
     flag: 'r'
   }).split("\n");
@@ -14,7 +14,7 @@ const countriesList =
         .map(c => `${Object.values(c)}`)
 
 const csv = [ "Country,Population,Area,Density", ...countriesList].join("\n");
-writeFileSync("countries.csv", csv);
+writeFileSync("files/countries.csv", csv);
 
 export default function parseLine(country) {
   // The regex search for the firsts not digits until the space,
